@@ -935,6 +935,12 @@ void KaleidoScope_SwitchPage(PauseContext* pauseCtx, u8 pt) {
         gSaveContext.buttonStatus[8] = BTN_ENABLED;
     }
 
+    // MOD: Fast Travel - Keanine ==============================
+    if (true && (D_8082ABEC[pauseCtx->mode] == PAUSE_MAP)) {
+        gSaveContext.buttonStatus[4] = BTN_ENABLED;
+    }
+    // =========================================================
+
     osSyncPrintf("kscope->kscp_pos+pt = %d\n", pauseCtx->pageIndex + pt);
 
     gSaveContext.unk_13EA = 0;
