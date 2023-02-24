@@ -20,18 +20,18 @@ static const __declspec(align(2)) char gYdanTex_00CA18[] = dgYdanTex_00CA18;
 static const char gYdanTex_00CA18[] __attribute__((aligned (2))) = dgYdanTex_00CA18;
 #endif
             
-#define dydan_sceneCollisionHeader_00B618 "__OTR__scenes/nonmq/ydan_scene/ydan_sceneCollisionHeader_00B618"
+#define dydan_sceneCollisionHeader_00B610 "__OTR__scenes/nonmq/ydan_scene/ydan_sceneCollisionHeader_00B610"
 #ifdef _WIN32
-static const __declspec(align(2)) char ydan_sceneCollisionHeader_00B618[] = dydan_sceneCollisionHeader_00B618;
+static const __declspec(align(2)) char ydan_sceneCollisionHeader_00B610[] = dydan_sceneCollisionHeader_00B610;
 #else
-static const char ydan_sceneCollisionHeader_00B618[] __attribute__((aligned (2))) = dydan_sceneCollisionHeader_00B618;
+static const char ydan_sceneCollisionHeader_00B610[] __attribute__((aligned (2))) = dydan_sceneCollisionHeader_00B610;
 #endif
             
-#define dydan_sceneTLUT_00B810 "__OTR__scenes/nonmq/ydan_scene/ydan_sceneTLUT_00B810"
+#define dydan_sceneTLUT_00B800 "__OTR__scenes/nonmq/ydan_scene/ydan_sceneTLUT_00B800"
 #ifdef _WIN32
-static const __declspec(align(2)) char ydan_sceneTLUT_00B810[] = dydan_sceneTLUT_00B810;
+static const __declspec(align(2)) char ydan_sceneTLUT_00B800[] = dydan_sceneTLUT_00B800;
 #else
-static const char ydan_sceneTLUT_00B810[] __attribute__((aligned (2))) = dydan_sceneTLUT_00B810;
+static const char ydan_sceneTLUT_00B800[] __attribute__((aligned (2))) = dydan_sceneTLUT_00B800;
 #endif
             
 
