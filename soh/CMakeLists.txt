@@ -813,6 +813,8 @@ set(Source_Files__src__code
     "src/code/z_vismono.c"
     "src/code/z_vr_box.c"
     "src/code/z_vr_box_draw.c"
+    "src/code/mods/keanine/mod_fast_travel.c"
+    "src/code/mods/keanine/mod_fast_travel.h"
 )
 source_group("Source Files\\src\\code" FILES ${Source_Files__src__code})
 

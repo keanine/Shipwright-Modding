@@ -15,6 +15,7 @@
 
 #include "soh/frame_interpolation.h"
 #include "soh/Enhancements/randomizer/randomizer_entrance.h"
+#include "src/code/mods/keanine/mod_fast_travel.h"
 
 static void* sEquipmentFRATexs[] = {
     gPauseEquipment00FRATex, gPauseEquipment01Tex, gPauseEquipment02Tex, gPauseEquipment03Tex, gPauseEquipment04Tex,
@@ -935,11 +936,7 @@ void KaleidoScope_SwitchPage(PauseContext* pauseCtx, u8 pt) {
         gSaveContext.buttonStatus[8] = BTN_ENABLED;
     }
 
-    // MOD: Fast Travel - Keanine ==============================
-    if (true && (D_8082ABEC[pauseCtx->mode] == PAUSE_MAP)) {
-        gSaveContext.buttonStatus[4] = BTN_ENABLED;
-    }
-    // =========================================================
+    MOD_FastTravel_EnableAButtonForMapScreen(D_8082ABEC[pauseCtx->mode]);
 
     osSyncPrintf("kscope->kscp_pos+pt = %d\n", pauseCtx->pageIndex + pt);
 
