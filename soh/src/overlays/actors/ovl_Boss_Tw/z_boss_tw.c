@@ -3,6 +3,7 @@
 #include "objects/object_tw/object_tw.h"
 #include "overlays/actors/ovl_Door_Warp1/z_door_warp1.h"
 #include "soh/frame_interpolation.h"
+//#include "mods/keanine/mod_twinrova_arrows.c"
 
 #include <string.h>
 
@@ -2880,6 +2881,37 @@ void BossTw_Update(Actor* thisx, PlayState* play) {
         if (this->work[INVINC_TIMER] == 0) {
             if (this->collider.base.acFlags & AC_HIT) {
                 this->collider.base.acFlags &= ~AC_HIT;
+
+                // ===================================================================================================================================
+                //MOD - KEANINE - TWINROVA ELEMENTAL ARROWS ==========================================================================================
+                
+                //CheckArrowCollision(this, sKoumePtr, sKotakePtr);
+
+                ColliderInfo* info = this->collider.info.acHitInfo;
+                if (this->actor.params == TW_KOTAKE) {
+                    if (info->toucher.dmgFlags & DMG_ARROW_FIRE) {
+                        osSyncPrintf("[MOD] KOTAKE HIT WITH FIRE ARROW");
+                        if (this->actor.colChkInfo.health < 2) {
+                            this->actor.colChkInfo.health = 2;
+                        }
+                        Audio_PlayActorSound2(&this->actor, NA_SE_EN_TWINROBA_DAMAGE_VOICE);
+                    }
+                }
+                else if (this->actor.params == TW_KOUME) {
+                    if (info->toucher.dmgFlags & DMG_ARROW_ICE) {
+                        osSyncPrintf("[MOD] KOTAKE HIT WITH ICE ARROW");
+                        if (this->actor.colChkInfo.health < 2) {
+                            this->actor.colChkInfo.health = 2;
+                        }
+                        Audio_PlayActorSound2(&this->actor, NA_SE_EN_TWINROBA_DAMAGE_VOICE);
+                    }
+                }
+
+                if ((sKoumePtr->actor.colChkInfo.health + sKotakePtr->actor.colChkInfo.health) >= 4) {
+                    //BossTw_SetupWait(this, play);
+                }
+                // ===================================================================================================================================
+                // ===================================================================================================================================
             }
 
             Collider_UpdateCylinder(&this->actor, &this->collider);
